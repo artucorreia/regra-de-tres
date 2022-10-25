@@ -6,8 +6,9 @@ let valorUm = window.document.getElementById('primeiro');
 let valorDois = window.document.getElementById('segundo');
 let valorTres = window.document.getElementById('terceiro');
 let valorQuatro = window.document.getElementById('quarto');
-let numero = [0, 0, 0, 0]
+let numero = [0, 0, 0, 0];
 function setarValores() {
+    resetar();
     numero[0] = Number(valorUm.value);
     numero[1] = Number(valorDois.value);
     numero[2] = Number(valorTres.value);
@@ -16,50 +17,95 @@ function setarValores() {
 }
 
 
-// Cálculo
+// Calculo de cada membro
 let membroX = false;
-let posX = 0;
+let posX = -1;
 let membroUm = 0;
 let membroDois = 0;
 let resp = 0;
 function membros() {
-    for (let i = 0; i <= 3; i++) {
-        if (numero[i] == 0) {
-            posX = i;
-        }
-    }
-    if ((posX == 0) || (posX == 3)) {
-        membroX = true;
-        if (posX == 0) {
-            membroUm = numero[3];
+    verificar();
+    limparInputs();
+    if (liberado != false) {
+        if ((posX == 0) || (posX == 3)) {
+            membroX = true;
+            if (posX == 0) {
+                membroUm = numero[3];
+            } else {
+                membroUm = numero[0];
+            }
         } else {
-            membroUm = numero[0];
+            membroUm = numero[0] * numero[3];
         }
-    } else {
-        membroUm = numero[0] * numero[3];
-    }
-    if ((posX == 1) || (posX == 2)) {
+        if ((posX == 1) || (posX == 2)) {
+            membroX = false;
+            if (posX == 1) {
+                membroDois = numero[2]; 
+            } else {
+                membroDois = numero[1];
+            }
+        } else {
+            membroDois = numero[1] * numero[2];
+        }
+        resposta();
         membroX = false;
-        if (posX == 1) {
-            membroDois = numero[2]; 
-        } else {
-            membroDois = numero[1];
-        }
-    } else {
-        membroDois = numero[1] * numero[2];
-    }
-    resposta();
-    membroX = false;
+    } 
 }
 
+// limpar inputs
+function limparInputs() {
+    valorUm.value = '';
+    valorDois.value = '';
+    valorTres.value = '';
+    valorQuatro.value = '';
+}
+
+// validação
+let liberado = true;
+function verificar() {
+    for (let i = 0; i <= 3; i++) {
+        if ((numero[i] == 0) && (posX == -1)) {
+            posX = i;
+            liberado = true;
+        } else if ((numero[i] == 0) && (posX != -1) && (liberado == true)) {
+            window.alert('Verifique os dados e tente novamente');
+            liberado = false;
+        }
+    }
+}
+
+// Cálculo da reposta
 function resposta() {
     if (membroX == true) {
-        alert(membroUm + 'x = ' + membroDois);
         resp = membroDois / membroUm;
-        alert(resp);
     } else {
-        alert(membroUm + ' = ' + membroDois + 'x');
         resp = membroUm / membroDois;
-        alert(resp);
     }
+    exibir();
+}
+
+// Exibição calculo
+let area = window.document.querySelector('div#area')
+let subtitulo = window.document.querySelector('h2#subtitulo');
+function exibir() {
+    subtitulo.innerHTML = `Cálculos`
+    if (membroX == true) {
+        area.innerHTML = `<p>${membroUm}x = ${membroDois}<p>`;
+    } else {
+        area.innerHTML += `<p>${membroUm} = ${membroDois}x<p>`;
+    }
+    area.innerHTML += `<p>x = ${resp}<p>`;
+}
+
+// resetar valores
+function resetar() {
+    liberado = false;
+    membroX = false;
+    posX = -1;
+    membroUm = 0;
+    membroDois = 0;
+    resp = 0;
+    numero = [0, 0, 0, 0];
+    subtitulo.innerHTML = ``;
+    area.innerHTML = ``;
 }
