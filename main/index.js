@@ -90,11 +90,16 @@ let subtitulo = window.document.querySelector('h2#subtitulo');
 function exibir() {
     subtitulo.innerHTML = `Cálculos`
     if (membroX == true) {
-        area.innerHTML = `<p>${membroUm}x = ${membroDois}<p>`;
+        area.innerHTML = `<p>${membroUm}x = ${numero[1]} * ${numero[2]}</p>`;
+        area.innerHTML += `<p>${membroUm}x = ${membroDois}</p>`;
+        area.innerHTML += `<p>x = ${membroDois} / ${membroUm}</p>`
     } else {
-        area.innerHTML += `<p>${membroUm} = ${membroDois}x<p>`;
+        area.innerHTML = `<p>${membroUm}x = ${numero[0]} * ${numero[3]}</p>`;
+        area.innerHTML += `<p>${membroUm} = ${membroDois}x</p>`;
+        area.innerHTML += `<p>${membroUm} / ${membroDois} = x</p>`
+        area.innerHTML += `<p>${resp} = x</p>`;
     }
-    area.innerHTML += `<p>x = ${resp}<p>`;
+    area.innerHTML += `<p>x = ${resp}</p>`;
 }
 
 // resetar valores
