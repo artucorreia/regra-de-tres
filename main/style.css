@@ -1,34 +1,79 @@
-body{
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+}
+
+body {
     background-color: rgba(146, 15, 146, 0.671);
     font: normal 15pt Arial;
 }
-header{
+
+header {
     text-align: center;
 }
-footer{
-    font-style: italic;
+
+h1 {
+    font-size: 20pt;
 }
-div{
+
+footer {
+    font-style: italic;
+    font-size: 12pt;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+div {
     margin: auto;
     text-align: center;
 }
-input{
-    width: 70px;
-    height: 25px;
-    font-size: 18pt;
+
+section#estrutura {
+    background-color: white;
+    padding: 15px;
+    width: 350px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgb(39, 39, 39);
 }
-div#fileiraUm{
+
+input {
+    width: 80px;
+    height: 30px;
+    font-size: 15pt;
+    border-radius: 10px;
+}
+
+div#fileiraUm { 
     margin-bottom: 30px;
 }
-input#primeiro{
+
+input#primeiro {
     margin-right: 90px;
 }
-input#segundo{
+
+input#segundo {
     margin-right: 90px;
 }
-input#botao{
+
+input#botao {
     font-size: 12pt;
     text-align: center;
     margin: auto;
     margin-top: 15px;
+}
+
+section#calculo {
+    background-color: white;
+    width: 500px;
+    margin: auto;
+    padding: 4px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgb(39, 39, 39);
+}
+
+h2 {
+    text-align: center;
+    font-size: 17pt;
 }
