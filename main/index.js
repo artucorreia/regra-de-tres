@@ -1,4 +1,4 @@
-var botao = window.document.getElementById('botao');
+let botao = window.document.getElementById('botao');
 botao.addEventListener('click', setarValores);
 
 // Setar Valores
@@ -12,52 +12,54 @@ function setarValores() {
     numero[1] = Number(valorDois.value);
     numero[2] = Number(valorTres.value);
     numero[3] = Number(valorQuatro.value); 
-    calculo();
-    console.log(numero[0])
-    console.log(numero[3])
+    membros();
 }
 
 
 // Cálculo
-let termoUm = false;
+let membroX = false;
 let posX = 0;
-let primeiraParte = 0;
-let segundaParte = 0;
+let membroUm = 0;
+let membroDois = 0;
 let resp = 0;
-function calculo() {
+function membros() {
     for (let i = 0; i <= 3; i++) {
         if (numero[i] == 0) {
-            posX = i
+            posX = i;
         }
     }
     if ((posX == 0) || (posX == 3)) {
-        termoUm = true;
+        membroX = true;
         if (posX == 0) {
-            primeiraParte = numero[3];
+            membroUm = numero[3];
         } else {
-            primeiraParte = numero[0];
+            membroUm = numero[0];
         }
     } else {
-        primeiraParte = numero[0] * numero[3];
+        membroUm = numero[0] * numero[3];
     }
     if ((posX == 1) || (posX == 2)) {
-        termoUm = false;
+        membroX = false;
         if (posX == 1) {
-            segundaParte = numero[2]; 
+            membroDois = numero[2]; 
         } else {
-            segundaParte = numero[1];
+            membroDois = numero[1];
         }
     } else {
-        segundaParte = numero[1] * numero[2];
+        membroDois = numero[1] * numero[2];
     }
-    if (termoUm == true) {
-        alert(primeiraParte + 'x = ' + segundaParte);
-        resp = segundaParte / primeiraParte;
+    resposta();
+    membroX = false;
+}
+
+function resposta() {
+    if (membroX == true) {
+        alert(membroUm + 'x = ' + membroDois);
+        resp = membroDois / membroUm;
         alert(resp);
     } else {
-        alert(primeiraParte + ' = ' + segundaParte + 'x');
-        resp = primeiraParte / segundaParte;
+        alert(membroUm + ' = ' + membroDois + 'x');
+        resp = membroUm / membroDois;
         alert(resp);
     }
-    termoUm = false;
 }
