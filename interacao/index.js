@@ -9,10 +9,10 @@ let valorQuatro = window.document.getElementById('quarto');
 let numero = [0, 0, 0, 0];
 function setarValores() {
     resetar();
-    numero[0] = Number(valorUm.value);
-    numero[1] = Number(valorDois.value);
-    numero[2] = Number(valorTres.value);
-    numero[3] = Number(valorQuatro.value); 
+    numero[0] = Number(valorUm.value); //8
+    numero[1] = Number(valorDois.value); // 8
+    numero[2] = Number(valorTres.value); // 0
+    numero[3] = Number(valorQuatro.value); // 8
     membros();
 }
 
@@ -98,7 +98,7 @@ function exibir() {
         area.innerHTML += `<p>${membroUm}x = ${membroDois}</p>`;
         area.innerHTML += `<p>x = ${membroDois} / ${membroUm}</p>`
     } else {
-        area.innerHTML = `<p>${membroUm}x = ${numero[0]} * ${numero[3]}</p>`;
+        area.innerHTML = `<p>${numero[0]} * ${numero[3]}  = ${membroDois}x</p>`;
         area.innerHTML += `<p>${membroUm} = ${membroDois}x</p>`;
         area.innerHTML += `<p>${membroUm} / ${membroDois} = x</p>`;
         area.innerHTML += `<p>${resp} = x</p>`;
