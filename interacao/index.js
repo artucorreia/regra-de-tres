@@ -72,6 +72,10 @@ function verificar() {
             liberado = false;
         }
     }
+    if (posX == -1) {
+        window.alert('Verifique os dados e tente novamente');
+        liberado = false;
+    }
 }
 
 // cálculo da reposta
