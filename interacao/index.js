@@ -1,7 +1,7 @@
 let botao = window.document.getElementById('botao');
 botao.addEventListener('click', setarValores);
 
-// Setar Valores
+// setar Valores
 let valorUm = window.document.getElementById('primeiro');
 let valorDois = window.document.getElementById('segundo');
 let valorTres = window.document.getElementById('terceiro');
@@ -17,7 +17,7 @@ function setarValores() {
 }
 
 
-// Calculo de cada membro
+// cálculo dos membros separadamente
 let membroX = false;
 let posX = -1;
 let membroUm = 0;
@@ -74,7 +74,7 @@ function verificar() {
     }
 }
 
-// Cálculo da reposta
+// cálculo da reposta
 function resposta() {
     if (membroX == true) {
         resp = membroDois / membroUm;
@@ -84,11 +84,11 @@ function resposta() {
     exibir();
 }
 
-// Exibição calculo
-let area = window.document.querySelector('div#area')
+// exibição calculo
+let area = window.document.querySelector('div#area');
 let subtitulo = window.document.querySelector('h2#subtitulo');
 function exibir() {
-    subtitulo.innerHTML = `Cálculos`
+    subtitulo.innerHTML = `Cálculos`;
     if (membroX == true) {
         area.innerHTML = `<p>${membroUm}x = ${numero[1]} * ${numero[2]}</p>`;
         area.innerHTML += `<p>${membroUm}x = ${membroDois}</p>`;
@@ -96,7 +96,7 @@ function exibir() {
     } else {
         area.innerHTML = `<p>${membroUm}x = ${numero[0]} * ${numero[3]}</p>`;
         area.innerHTML += `<p>${membroUm} = ${membroDois}x</p>`;
-        area.innerHTML += `<p>${membroUm} / ${membroDois} = x</p>`
+        area.innerHTML += `<p>${membroUm} / ${membroDois} = x</p>`;
         area.innerHTML += `<p>${resp} = x</p>`;
     }
     area.innerHTML += `<p>x = ${resp}</p>`;
