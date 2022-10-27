@@ -4,7 +4,6 @@
 }
 
 body {
-    background-color: rgb(234, 238, 237);
     background-color: rgb(56, 55, 53);
     font: normal 15pt Arial;
 }
@@ -60,7 +59,7 @@ input#botao {
 
 section#calculo {
     background-color: white;
-    width: 350px;
+    width: 300px;
     margin: auto;
     text-align: center;
     padding: 4px;
