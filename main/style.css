@@ -4,7 +4,8 @@
 }
 
 body {
-    background-color: rgba(146, 15, 146, 0.671);
+    background-color: rgb(234, 238, 237);
+    background-color: rgb(56, 55, 53);
     font: normal 15pt Arial;
 }
 
@@ -14,14 +15,7 @@ header {
 
 h1 {
     font-size: 20pt;
-}
-
-footer {
-    font-style: italic;
-    font-size: 12pt;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    color: white;
 }
 
 div {
@@ -35,7 +29,7 @@ section#estrutura {
     width: 350px;
     margin: auto;
     border-radius: 10px;
-    box-shadow: 3px 3px 5px rgb(39, 39, 39);
+    box-shadow: 3px 3px 5px rgb(17, 17, 17);
 }
 
 input {
@@ -66,14 +60,16 @@ input#botao {
 
 section#calculo {
     background-color: white;
-    width: 500px;
+    width: 350px;
     margin: auto;
+    text-align: center;
     padding: 4px;
     border-radius: 10px;
-    box-shadow: 3px 3px 5px rgb(39, 39, 39);
+    box-shadow: 3px 3px 5px rgb(17, 17, 17);
 }
 
 h2 {
     text-align: center;
     font-size: 17pt;
+    color: white;
 }
