@@ -130,7 +130,7 @@ function notCient(r) {
         }
     }
     if (r != 10) {
-        return `<p>x = ${r.toFixed(4)} * 10<sup>${exp}</sup></p>`;
+        return `<p>x = ${r} * 10<sup>${exp}</sup></p>`;
     } else {
         exp++;
         return `<p>x = 10<sup>${exp}</sup></p>`;
