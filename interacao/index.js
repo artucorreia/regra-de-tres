@@ -106,22 +106,25 @@ function exibir() {
     area.innerHTML += `<p>x = ${resp}</p>`;
     if ((resp >= 1000) || (resp <= 0.001)) {
         area.innerHTML += '<p>ou</p>'
-        notCient(resp);
-        notacao;
+        area.innerHTML += notCient(resp);
     }
 }
 
 // conversor para notação científica
 let exp = 0;
-let notacao;
 function notCient(r) {
     if (r < 1) {
         while (r < 1) {
-            r *= 10
-            exp--
+            r *= 10;
+            exp--;
         }
-        notacao = area.innerHTML += `x = ${r} * 10<sup>${exp}</sup>`
+    } else {
+        while (r > 10) {
+            r /= 10;
+            exp++;
+        }
     }
+    return `<p>x = ${r} * 10<sup>${exp}</sup></p>`;
 }
 
 // resetar valores
@@ -135,4 +138,5 @@ function resetar() {
     numero = [0, 0, 0, 0];
     subtitulo.innerHTML = ``;
     area.innerHTML = ``;
+    exp = 0;
 }
