@@ -51,10 +51,13 @@ input#segundo {
 }
 
 input#botao {
-    font-size: 12pt;
+    font-size: 19pt;
     text-align: center;
     margin: auto;
     margin-top: 15px;
+    border-radius: 50px;
+    width: 45px;
+    height: 45px;
 }
 
 section#calculo {
