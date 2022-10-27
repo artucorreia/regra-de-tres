@@ -1,6 +1,11 @@
 let botao = window.document.getElementById('botao');
 botao.addEventListener('click', setarValores);
 
+// observação
+function obs() {
+    window.alert('OBS.: O local da icógnita deve permanecer em branco ou nulo ( 0 )')
+}
+
 // setar Valores
 let valorUm = window.document.getElementById('primeiro');
 let valorDois = window.document.getElementById('segundo');
@@ -124,7 +129,12 @@ function notCient(r) {
             exp++;
         }
     }
-    return `<p>x = ${r} * 10<sup>${exp}</sup></p>`;
+    if (r != 10) {
+        return `<p>x = ${r.toFixed(4)} * 10<sup>${exp}</sup></p>`;
+    } else {
+        exp++;
+        return `<p>x = 10<sup>${exp}</sup></p>`;
+    }
 }
 
 // resetar valores
@@ -137,6 +147,6 @@ function resetar() {
     resp = 0;
     numero = [0, 0, 0, 0];
     subtitulo.innerHTML = ``;
-    area.innerHTML = ``;
+    area.innerHTML = `<em>CÁLCULOS</em>`;
     exp = 0;
 }
