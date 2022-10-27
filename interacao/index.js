@@ -104,6 +104,24 @@ function exibir() {
         area.innerHTML += `<p>${resp} = x</p>`;
     }
     area.innerHTML += `<p>x = ${resp}</p>`;
+    if ((resp >= 1000) || (resp <= 0.001)) {
+        area.innerHTML += '<p>ou</p>'
+        notCient(resp);
+        notacao;
+    }
+}
+
+// conversor para notação científica
+let exp = 0;
+let notacao;
+function notCient(r) {
+    if (r < 1) {
+        while (r < 1) {
+            r *= 10
+            exp--
+        }
+        notacao = area.innerHTML += `x = ${r} * 10<sup>${exp}</sup>`
+    }
 }
 
 // resetar valores
